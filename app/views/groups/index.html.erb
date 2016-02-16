@@ -19,9 +19,58 @@
         <td><%= group.name %></td>
         <td><%= group.salle %></td>
         <td><%= group.tache %></td>
+        <td>        </td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    <% group.people.each do |person| %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= person.name %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing People</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Group</th>
+      <th>Sensei</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.email %></td>
+        <td><%= person.group_id %></td>
+        <td><%= person.sensei %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <!-- <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +78,4 @@
 
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to 'New Person', new_person_path %>
