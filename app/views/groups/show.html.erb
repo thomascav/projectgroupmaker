@@ -16,12 +16,14 @@
 </p>
 <p>
   <strong>Membres:</strong>
-  <% @people.each do |person| %>
-      <% if @group.id == person.group_id%>
- <%= person.name %>
+  <br>
+  <% @group.people.each do |person| %>
+<p>
+
+    <%= person.name %>
+    <%= person.sensei? ? " - sensei" : "" %>
 </p>
 
-<% end %>
 <% end %>
 </p>
 

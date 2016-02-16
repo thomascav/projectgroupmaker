@@ -4,13 +4,14 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+    @people = Person.all
     @groups = Group.all
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
-      @people = Person.all          
+      @people = Person.all
   end
 
   # GET /groups/new
