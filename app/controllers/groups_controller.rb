@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
-def randomize
+def random
  @people = Person.all
  @groups = Group.all
  alone_id=Person.all.to_a.map {|x| x.id}
@@ -25,8 +25,6 @@ redirect_to root_path notice:"Groups have been randomize"
 
 end
 
-
-  end
   # GET /groups
   # GET /groups.json
   def index
