@@ -38,7 +38,7 @@
      <td></td>
      <td><%= person.name %>
      <td><%= best_in_place person, :sensei, :as => :select, :collection => {"1" => "Sensei", "2" => "Scarabée"} %></td>
-     <td></td>
+     <td><%= best_in_place person, :group_id , :as => :select, :collection => {"nil" => "Sans groupe"}%></td>
      <td></td>
    </tr>
      <% end %>
@@ -70,7 +70,7 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-         <% if person.group_id == nil %>
+         <% if person.group_id == 0 %>
         <td><%= best_in_place person, :name %></td>
         <td><%= person.email %></td>
         <td><%= best_in_place person, :group_id , :as => :select, :collection => {"1" => "1", "2" => "2", "3" => "3"}%></td>
