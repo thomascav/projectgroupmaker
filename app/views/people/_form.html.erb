@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :group_id %><br>
-    <%= f.number_field :group_id %>
+    <%= f.select :group_id, options_for_select(Group.all.to_a.map {|x| [ x.name, x.id]}) %>
   </div>
   <div class="field">
     <%= f.label :sensei %><br>
