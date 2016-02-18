@@ -42,10 +42,13 @@ td:hover {
     margin-top: 10px;
     background-color: #AAABAD;
     text-decoration: none;
+    box-shadow: 5px 5px 2px #888888;
+    transition: 0.5s all ease;
 
 }
 .home:hover {
     background-color: #767678;
     color : white;
     text-decoration: none;
+    box-shadow: 10px 10px 2px #888888;
 }
