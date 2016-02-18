@@ -37,7 +37,7 @@
      <td></td>
      <td></td>
      <td><%= person.name %>
-     <td><%= best_in_place person, :sensei, :as => :select, :collection => {"1" => "Sensei", "2" => "Scarabée"} %></td>
+     <td><%= best_in_place person, :sensei, :as => :select, :collection => {"1" => "Sensei", "2" => "Scarabée"} %><%= person.sensei? ? "Sensei" : "scarabée" %></td>
      <td><%= best_in_place person, :group_id , :as => :select, :collection => {"nil" => "Sans groupe"}%></td>
      <td></td>
    </tr>
