@@ -22,7 +22,9 @@
  <tbody>
    <% @groups.each do |group| %>
    <tr>
-     <td><%= group.name %></td>
+     <td><%= group.name %>
+         <em>(<%= group.people.count %> <% if group.people.count >1 %>membres <% else %>membre <% end %>)</em>
+     </td>
      <td><%= group.salle %></td>
      <td><%= group.tache %></td>
      <td></td>
