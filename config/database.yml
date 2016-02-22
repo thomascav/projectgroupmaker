@@ -9,9 +9,6 @@
 #   pool: 5
 #   timeout: 5000
 #
-# development:
-#   <<: *default
-#   database: db/development.postgresql
 #
 # test:
 #   <<: *default
@@ -31,20 +28,29 @@ default: &default
   pool: 5
   timeout: 5000
 
+# development:
+#   <<: *default
+#   database: db/development.postgresql
 development:
-  adapter: postgresql
-  database: my_database_development
-  pool: 5
-  timeout: 5000
+  # adapter: postgresql
+  # database: my_database_development
+  # pool: 5
+  # timeout: 5000
+  <<: *default
+  database: db/developmentpostgresql
 
 test:
-  adapter: postgresql
-  database: my_database_test
-  pool: 5
-  timeout: 5000
+  # adapter: postgresql
+  # database: my_database_test
+  # pool: 5
+  # timeout: 5000
+  <<: *default
+  database: db/testpostgresql
 
 production:
-  adapter: postgresql
-  database: my_database_production
-  pool: 5
-  timeout: 5000
+  # adapter: postgresql
+  # database: my_database_production
+  # pool: 5
+  # timeout: 5000
+   <<: *default
+   database: db/producttionpostgresql
